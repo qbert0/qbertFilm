@@ -4,6 +4,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import ReviewItem from "./ReviewItem"
 import ReviewInput from "./ReviewInput"
 import { getComment } from "@/api/action/comment"
+import TestLog from "@/components/Card/text"
 
 interface Props {
     movieId : string
@@ -22,6 +23,7 @@ const Review = async ({movieId} : Props) => {
                 <div className="text-3xl font-bold">
                 Review
                 </div> 
+                <TestLog text={comment}/>
             </div>
         <ScrollArea className="w-full whitespace-nowrap">
             <div className="flex w-full flex-col-reverse px-4">
