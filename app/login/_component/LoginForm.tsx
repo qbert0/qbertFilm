@@ -47,7 +47,7 @@ const LoginForm = ({change} : Props) => {
             <div className="text-white font-bold text-3xl mt-4 mb-8 ">
                 Login
             </div>
-            <form  className=" flex flex-col gap-6 w-full my-6">
+            <div  className=" flex flex-col gap-6 w-full my-6">
                 {
                     error && <ErrorMe label="User or password not correct!" />
                 }
@@ -61,7 +61,7 @@ const LoginForm = ({change} : Props) => {
                 value={password} 
                 setValue={setPassword} 
                 press={handleKeyPress}/>
-            </form>
+            </div>
             <div 
                 onClick={loginPass}
                 className=" bg-orange-600/90 hover:cursor-pointer w-full py-2 text-xl flex justify-center items-center text-white font-bold">
