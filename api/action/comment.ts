@@ -17,10 +17,10 @@ export const postCreateComment = async (id : string, token : string, content: st
 }
 
 export const getComment = async (id : string) => {
-    try{
+    // try{
         const comment = await instanceComment.get(`${GET}/${id}`)
         return comment
-    } catch {
-        return "error"
-    }
+    // } catch {
+    //     return "error"
+    // }
 }
