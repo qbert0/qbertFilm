@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  webserver: 
+    image: qbert1412/film:v3.0
+    container_name: webfilm
+    ports:
+      - 3000:3000
+  
+    
