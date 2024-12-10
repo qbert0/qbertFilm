@@ -1,4 +1,4 @@
-import instance, { API_KEY, IMAGE } from "@/api/axios"
+import instance, { API_KEY} from "@/api/axios"
 import ViewFilm from "@/components/Card/ViewFilm/ViewFilm";
 import { convertMovie, Movie } from "@/components/Card/ViewFilm/ViewMovieData";
 import AiComment from "@/components/Form/AiComment/AiComment";
@@ -6,11 +6,10 @@ import ListCast from "@/components/Form/ListCast/ListCast";
 import Recomment from "@/components/Form/Recomment/Recomment";
 import SideBar from "@/components/Form/sidebar/sidebar";
 import Review from "@/components/Form/Socal/Review/Review";
-import { FaStar } from "react-icons/fa";
 
 
 const MoviePage = async ({ params }: { params: { id: string } }) => {
-    const data : any = await instance.get(`movie/${params.id}${API_KEY}`)
+    const data = await instance.get(`movie/${params.id}${API_KEY}`)
     const newdata : Movie = convertMovie(data)
     return (
         <div className="w-full bg-white">

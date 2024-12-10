@@ -6,7 +6,6 @@ interface Props {
 
 const RateCircle = ({rate} : Props) => {
     const persen = convertNumberFormat(rate)
-    const color = setColor(persen)
     return (
         <div className='bg-white rounded-full p-0.5 hover:scale-110 hover:z-10 duration-200'>
         <CircularProgress size="lg" determinate 
@@ -29,10 +28,10 @@ function convertNumberFormat(input: number): number {
     return Math.floor(multiplied);
 }
 
-function setColor (rate : number) : string {
-    if (rate > 50) {
-        return "neutral"
-    } else {
-        return "primary"
-    }
-}
+// function setColor (rate : number) : string {
+//     if (rate > 50) {
+//         return "neutral"
+//     } else {
+//         return "primary"
+//     }
+// }

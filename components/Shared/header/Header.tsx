@@ -5,9 +5,6 @@ import Image from "next/image"
 import logo from "@/public/image/logo.png"
 import Avatars from "./avatar"
 
-interface Props {
-
-}
 
 const Header =() => {
 

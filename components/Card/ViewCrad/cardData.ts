@@ -1,6 +1,3 @@
-import instance, { API_KEY } from "@/api/axios"
-import { listId } from "@/lib/data"
-
 export interface CardData {
     image : string
     name : string

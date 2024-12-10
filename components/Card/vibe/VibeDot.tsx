@@ -7,12 +7,12 @@ import MoodShop from "./MoodShop";
 import ToneForm from "./Tone";
 import Image, { StaticImageData } from "next/image";
 interface Props {
-    movideId : string
+    movideId? : string
     name : string
 }
 
 
-const VibeDot = ({movideId, name} : Props) => {
+const VibeDot = ({ name} : Props) => {
     const [vibe, setVibe] = useState(0)
     const [explo, setExplo] = useState(false)
     const [mood, setMood] = useState<string | StaticImageData>()
@@ -71,7 +71,7 @@ const VibeDot = ({movideId, name} : Props) => {
                             Clear my rating
                         </div>
                         <div onClick={() => handle(false)} className=" bg-[#032A40] rounded-xl hover:cursor-pointer px-2 py-1 flex items-center gap-1 ">
-                            <TiTick /> <div>I'm Done</div>
+                            <TiTick /> <div>{"I'm Done"}</div>
                         </div>
 
                     </div>

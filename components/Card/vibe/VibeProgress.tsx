@@ -1,6 +1,5 @@
 'use client'
 import Slider from '@mui/material/Slider';
-import { TiTimes } from 'react-icons/ti';
 
 interface Props {
     proge : number
@@ -62,7 +61,7 @@ const VibeProgress = ({proge, name, setProge} : Props) => {
     function valueLabelFormat(value: number) {
         const units = ['Dumpster File', 'Absolute Trash', 'Garbage', 'Truly Bad', 'Not Good', 'Passable', "It's Alright", 'Pretty Decent', 'Really Good', 'Greatness', 'Champion'];
       
-        let unitIndex = value/10;
+        const unitIndex = value/10;
         setProge(value)
         return `${units[unitIndex]}`;
     }

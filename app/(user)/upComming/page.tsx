@@ -1,10 +1,4 @@
-import instance from "@/api/axios"
-import { convertEmbla, EmblaData } from "@/components/Card/CarouselDot/tsx/EmblaData"
 import GridCardFilm from "@/components/Card/ViewCrad/GridCardFilm"
-
-interface Props {
-
-}
 
 const UpComing = async () => {
     return (

@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { EmblaData } from "./EmblaData"
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";

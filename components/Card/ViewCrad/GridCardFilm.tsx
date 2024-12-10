@@ -1,7 +1,7 @@
 import instance, { API_KEY } from "@/api/axios";
 import {  convertCardData } from "./cardData";
 import CardFilm from "./CardFilm";
-import { Box, Skeleton } from "@mui/material";
+import {  Skeleton } from "@mui/material";
 import { convertTrain } from "@/api/action/recommendation";
 
 interface Props {

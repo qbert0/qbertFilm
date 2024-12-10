@@ -16,11 +16,11 @@ import {
 import { useState } from "react"
 interface Props {
     tone : string,
-    name : string,
+    name? : string,
     setTone : (tone: string) => void
 }
 
-const ToneForm = ({tone, name, setTone} : Props) => {
+const ToneForm = ({tone, setTone} : Props) => {
     const [open, setOpen] = useState(false)
 
     return (

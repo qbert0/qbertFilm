@@ -1,5 +1,4 @@
-import instance, { API_KEY} from "@/api/axios"
-import { convertTrending, TrendingData } from "../Trending/TrendingData"
+import { TrendingData } from "../Trending/TrendingData"
 import AICommentItem from "./AiCommentItem"
 import { getRecommentdation } from "@/api/action/recommendation"
 

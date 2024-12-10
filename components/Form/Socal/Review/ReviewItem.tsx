@@ -1,5 +1,4 @@
 'use client'
-import { IMAGE } from "@/api/axios";
 import { ReviewData } from "./ReviewData";
 import { CiHeart } from "react-icons/ci";
 import { useState } from "react";

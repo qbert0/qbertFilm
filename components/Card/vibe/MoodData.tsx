@@ -1,4 +1,3 @@
-import React from "react"
 import h1 from "@/public/icon/h1.png"
 import h2 from "@/public/icon/h2.png"
 import h3 from "@/public/icon/h3.png"

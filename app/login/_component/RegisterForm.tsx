@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button"
 import InputPassword from "./InputPassword"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { postRegisterPass } from "@/api/action/login"
 import ErrorMe from "./ErrorMe"
 
@@ -20,7 +19,7 @@ const RegisterForm = ({change} : Props) => {
     const [load, setLoad] = useState(false)
     const [error, setError] = useState(false)
     const [label, setLabel] = useState('')
-    const router = useRouter()
+    // const router = useRouter()
 
     const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(event.target.value);

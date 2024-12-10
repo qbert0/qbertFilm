@@ -1,8 +1,6 @@
 import instance, { API_KEY } from "@/api/axios"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { convertTrending, TrendingData } from "../Trending/TrendingData"
-import Trending from "../Trending/Trending"
-import TrendingItem from "../Trending/TrendingItem"
 import RecommentItem from "./RecommentItem"
 
 interface Props {

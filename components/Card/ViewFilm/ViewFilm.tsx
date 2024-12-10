@@ -87,21 +87,21 @@ const ViewFilm = async({movie} : Props) => {
 
 export default ViewFilm
 
-function shortenDecimal(input: string): string {
-    // Chuyển đổi chuỗi thành số
-    const number = parseFloat(input);
+// function shortenDecimal(input: string): string {
+//     // Chuyển đổi chuỗi thành số
+//     const number = parseFloat(input);
     
-    // Sử dụng toFixed để giữ 1 chữ số thập phân
-    return number.toFixed(1);
-}
+//     // Sử dụng toFixed để giữ 1 chữ số thập phân
+//     return number.toFixed(1);
+// }
 function shotYear (input : string) : string {
-    const dateString: string = "2024-11-23";
+    const dateString: string = input;
     const year: string = dateString.split("-")[0];
     return year
 }
 
 function sortYear (input : string) : string {
-    const dateString: string = "2024-11-23";
+    const dateString: string = input;
     const parts: string[] = dateString.split("-");
     const formattedDate: string = `${parts[2]}/${parts[1]}/${parts[0]}`;
     return formattedDate
