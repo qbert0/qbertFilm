@@ -17,13 +17,18 @@ const Review = async ({movieId} : Props) => {
 
     const comment : any = await getComment(movieId)
     const listComment = comment !== 'error' ? convertReviewMe(comment) : []
+    const text = {
+        comment : comment,
+        id : movieId,
+        name : "review"
+    }
     return (
         <div className="flex flex-col pl-32 pr-1 ">
             <div className="w-full fle py-4">
                 <div className="text-3xl font-bold">
                 Review
                 </div> 
-                <TestLog text={comment}/>
+                <TestLog text={text}/>
             </div>
         <ScrollArea className="w-full whitespace-nowrap">
             <div className="flex w-full flex-col-reverse px-4">

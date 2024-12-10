@@ -14,7 +14,6 @@ const MoviePage = async ({ params }: { params: { id: string } }) => {
     return (
         <div className="w-full bg-white">
             <ViewFilm movie={newdata} />
-            
 
             <div className=" flex gap-4">
                 <div className=" w-3/4">
