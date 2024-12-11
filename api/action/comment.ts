@@ -1,4 +1,3 @@
-'use server'
 import instance from "../axios"
 import { COMMENT_SERVICE, CREATE, GET } from "../service/Comment"
 
@@ -22,6 +21,6 @@ export const getComment = async (id : string) => {
         const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${id}`)
         return comment
     } catch {
-        return "error"
+        return "null"
     }
 }
