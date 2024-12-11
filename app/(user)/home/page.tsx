@@ -19,8 +19,9 @@ const HomePage = () => {
         const tokes  = await getComment(username)
         const token  = await testAPiWeb(username)
         setLoad(false)
-        console.log(token)
         console.log(tokes + " tokens")
+        console.log(token)
+        
     }
     return (
         <div className=" bg-white">

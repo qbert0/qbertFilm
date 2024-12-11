@@ -19,7 +19,7 @@ export const testAPiWeb = async (path : string) => {
     const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${path}`)
         return comment
   } catch {
-    return "null"
+    return "error"
   }
 }
 

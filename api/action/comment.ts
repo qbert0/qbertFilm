@@ -1,3 +1,4 @@
+import axios from "axios"
 import instance from "../axios"
 import { COMMENT_SERVICE, CREATE, GET } from "../service/Comment"
 
@@ -18,7 +19,7 @@ export const postCreateComment = async (id : string, token : string, content: st
 
 export const getComment = async (path : string) => {
     try {
-      const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${path}`)
+      const comment = await axios.get(`${COMMENT_SERVICE}${GET}/${path}`)
           return comment
     } catch {
       return "null"
