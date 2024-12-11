@@ -16,11 +16,11 @@ export const postCreateComment = async (id : string, token : string, content: st
     }
 }
 
-export const getComment = async (id : string) => {
+export const getComment = async (path : string) => {
     try {
-    const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${id}`)
-        return comment
+      const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${path}`)
+          return comment
     } catch {
-    return "null"
+      return "null"
     }
-}
+  }
