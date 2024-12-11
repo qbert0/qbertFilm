@@ -1,6 +1,6 @@
 // import axios from "axios";
-import instance from "./axios";
-import { COMMENT_SERVICE, GET } from "./service/Comment";
+import instance from "../axios";
+import { COMMENT_SERVICE, GET } from "../service/Comment";
 
 // const instanceNew = axios.create({
 //   baseURL: ""

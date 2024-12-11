@@ -1,7 +1,7 @@
 'use client'
 
 import { getComment } from "@/api/action/comment"
-import { testAPiWeb } from "@/api/axiosClient"
+import { testAPiWeb } from "@/api/action/axiosClient"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -16,8 +16,8 @@ const HomePage = () => {
     const loginPass = async () => {
         if (username === "" ) return
         setLoad(true)
-        const token : any = await testAPiWeb(username)
-        const tokes : any = await getComment(username);
+        const tokes  = await getComment(username)
+        const token  = await testAPiWeb(username)
         setLoad(false)
         console.log(token)
         console.log(tokes + " tokens")

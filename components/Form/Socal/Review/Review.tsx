@@ -3,8 +3,9 @@ import { convertReview, convertReviewMe, ReviewData } from "./ReviewData"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import ReviewItem from "./ReviewItem"
 import ReviewInput from "./ReviewInput"
-import { getComment } from "@/api/action/comment"
+// import { getComment } from "@/api/action/comment"
 import TestLog from "@/components/Card/text"
+import { testAPiWeb } from "@/api/action/axiosClient"
 
 interface Props {
     movieId : string
@@ -15,7 +16,7 @@ const Review = async ({movieId} : Props) => {
     const data : any = await instance.get(`/movie/${movieId}/reviews${API_KEY}`)
     const listReview = convertReview(data.results)
 
-    const comment : any = await getComment(movieId)
+    const comment : any = await testAPiWeb(movieId)
     const listComment = comment !== 'error' ? convertReviewMe(comment) : []
     const text = {
         comment : comment,
