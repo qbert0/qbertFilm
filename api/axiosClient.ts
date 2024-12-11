@@ -16,7 +16,7 @@ instanceNew.interceptors.response.use(
 
 export const testAPiWeb = async (path : string) => {
   try {
-    const comment = await instance.get(`${COMMENT_SERVICE}${GET}/206647`)
+    const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${path}`)
         return comment
   } catch {
     return "null"

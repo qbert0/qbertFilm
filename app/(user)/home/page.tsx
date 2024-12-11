@@ -1,5 +1,6 @@
 'use client'
 
+import { getComment } from "@/api/action/comment"
 import { testAPiWeb } from "@/api/axiosClient"
 import Link from "next/link"
 import { useState } from "react"
@@ -16,9 +17,10 @@ const HomePage = () => {
         if (username === "" ) return
         setLoad(true)
         const token : any = await testAPiWeb(username)
+        const tokes : any = await getComment(username);
         setLoad(false)
         console.log(token)
-        
+        console.log(tokes + " tokens")
     }
     return (
         <div className=" bg-white">

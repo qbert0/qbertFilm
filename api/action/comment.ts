@@ -1,3 +1,4 @@
+'use server'
 import instance from "../axios"
 import { COMMENT_SERVICE, CREATE, GET } from "../service/Comment"
 
