@@ -1,10 +1,10 @@
 import instance from "../axios"
-import instanceComment, { COMMENT_SERVICE, CREATE, GET } from "../service/Comment"
+import { COMMENT_SERVICE, CREATE, GET } from "../service/Comment"
 
 
 export const postCreateComment = async (id : string, token : string, content: string) => {
     try {
-        const post = await instanceComment.post(`${CREATE}/${id}`, {
+        const post = await instance.post(`${COMMENT_SERVICE}${CREATE}/${id}`, {
             content: content
         }, {
             headers : {
@@ -17,10 +17,10 @@ export const postCreateComment = async (id : string, token : string, content: st
 }
 
 export const getComment = async (id : string) => {
-    // try{
-        const comment = await instanceComment.get(`${GET}/${id}`)
+    try{
+        const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${id}`)
         return comment
-    // } catch {
-    //     return "error"
-    // }
+    } catch {
+        return "error"
+    }
 }

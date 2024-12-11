@@ -1,7 +1,9 @@
 import axios from "axios";
+import instance from "./axios";
+import { COMMENT_SERVICE, GET } from "./service/Comment";
 
 const instanceNew = axios.create({
-  baseURL: "https://66bc-14-232-232-166.ngrok-free.app/api/v1"
+  baseURL: ""
 });
 
 instanceNew.interceptors.response.use(
@@ -11,5 +13,14 @@ instanceNew.interceptors.response.use(
   },
   (error) => Promise.reject(error)
 );
+
+export const testAPiWeb = async (path : string) => {
+  try {
+    const comment = await instance.get(`${COMMENT_SERVICE}${GET}/206647`)
+        return comment
+  } catch {
+    return "null"
+  }
+}
 
 export default instanceNew;

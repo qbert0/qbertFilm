@@ -1,4 +1,3 @@
-import TestLog from "@/components/Card/text"
 import { TrendingData } from "../Trending/TrendingData"
 import AICommentItem from "./AiCommentItem"
 import { getRecommentdation } from "@/api/action/recommendation"
@@ -16,7 +15,6 @@ interface Props {
             <div className=" text-xl font-semibold">
                 AI Recommendation
             </div>
-            <TestLog text={film} />
 
             <div className="px-3 space-y-1.5">
                 { 
