@@ -1,18 +1,18 @@
-import axios from "axios";
+// import axios from "axios";
 import instance from "./axios";
 import { COMMENT_SERVICE, GET } from "./service/Comment";
 
-const instanceNew = axios.create({
-  baseURL: ""
-});
+// const instanceNew = axios.create({
+//   baseURL: ""
+// });
 
-instanceNew.interceptors.response.use(
-  (response) => {
-    const data = response.data;
-    return data; // Return the extracted data directly
-  },
-  (error) => Promise.reject(error)
-);
+// instanceNew.interceptors.response.use(
+//   (response) => {
+//     const data = response.data;
+//     return data; // Return the extracted data directly
+//   },
+//   (error) => Promise.reject(error)
+// );
 
 export const testAPiWeb = async (path : string) => {
   try {
@@ -23,4 +23,4 @@ export const testAPiWeb = async (path : string) => {
   }
 }
 
-export default instanceNew;
+// export default instanceNew;
