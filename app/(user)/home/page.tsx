@@ -19,7 +19,8 @@ const HomePage = () => {
         const tokes  = await getComment(username)
         const token  = await testAPiWeb(username)
         setLoad(false)
-        console.log(tokes + " tokens")
+        console.log(tokes )
+        console.log("asdasdas")
         console.log(token)
         
     }

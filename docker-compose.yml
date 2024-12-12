@@ -2,9 +2,32 @@ version: '3.9'
 
 services:
   webserver: 
-    image: qbert1412/film:v3.0
+    build: .
     container_name: webfilm
     ports:
       - 3000:3000
-  
-    
+  user_service:
+    image: xuanbao01/user_service
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+  comment_service:
+    image: xuanbao01/comment_service
+    ports:
+      - "8001:8001"
+    command: python manage.py runserver 0.0.0.0:8001
+  recommendation_service:
+    image: xuanbao01/recommendation_service
+    ports:
+      - "8002:8002"
+    command: uvicorn main:app --host 0.0.0.0 --port 8002 --reload
+  sentiment_service:
+    image: xuanbao01/sentiment_service
+    ports:
+      - "8003:8003"
+    command: uvicorn main:app --host 0.0.0.0 --port 8003 --reload
+  decision_service:
+    image: xuanbao01/decision_service
+    ports:
+      - "8004:8004"
+    command: uvicorn main:app --host 0.0.0.0 --port 8004 --reload
