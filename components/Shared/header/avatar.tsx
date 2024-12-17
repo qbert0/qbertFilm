@@ -28,6 +28,10 @@ const Avatars = () => {
         localStorage.removeItem('name')
         router.push('/login')
     }
+
+    const refest = () => {
+        router.refresh()
+    }
     
     if (token === null || name === null) {
         return (
@@ -43,10 +47,11 @@ const Avatars = () => {
                 <Avatar {...stringAvatar(name)} />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="border border-gray-300 bg-white p-0 rounded-xl overflow-hidden">
-                <DropdownMenuLabel className='w-full flex bg-gray-200 cursor-pointer line-clamp-1' >{name}</DropdownMenuLabel>
-                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer' onClick={logout}>Logout</DropdownMenuLabel>
+                <DropdownMenuLabel className='w-full flex  cursor-pointer line-clamp-1 border-b border-gray-400/20' >{name}</DropdownMenuLabel>
+                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer'> <Link href={'/watchlist'} className='w-full' onClick={refest}>watchlist</Link></DropdownMenuLabel>
+                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer'> <Link href={'/favorite'} className='w-full' onClick={refest}>favorite</Link></DropdownMenuLabel>
+                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer border-t border-gray-400/20' onClick={logout}>Logout</DropdownMenuLabel>
         </DropdownMenuContent>
-        
         </DropdownMenu>
     )
 }

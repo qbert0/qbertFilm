@@ -64,9 +64,7 @@ const ViewFilm = async({movie} : Props) => {
                         </div>
 
                         <div className=" my-4">
-                            {rate !== "error" && 
-                                <UserCheck rate={rate !== 1 ? true : false} setRate={handleLike}/>
-                            }
+                            <UserCheck id={movie.id} rate={rate !== 1 ? true : false} setRate={handleLike}/>
                         </div>
 
                         <div className=" my-1 text-gray-400">

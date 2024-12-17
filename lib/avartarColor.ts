@@ -38,13 +38,26 @@ function stringToTextColor(string : string) {
     return getContrastYIQ(backgroundColor);
 }
   
-  export function stringAvatar(name: string) {
+  export function stringAvatar(name: string, cur? : boolean) {
     let initials;
 
     if (name.split(' ').length > 1) {
         initials = `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`; // Tên và họ
     } else {
         initials = `${name.split(' ')[0][0]}`; // Chỉ tên
+    }
+    if (cur && cur) {
+        return {
+            sx: {
+                bgcolor: stringToBackgroundColor(name),
+                color: stringToTextColor(name),
+                fontWeight: 'bold',
+                height: 160,
+                width : 160,
+                fontSize: 80
+              },
+            children: toUpperCaseFirstLetter(initials), 
+        }
     }
     return {
       sx: {
