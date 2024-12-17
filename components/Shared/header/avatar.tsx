@@ -59,6 +59,5 @@ const Avatars = () => {
     )
 }
 
-
 export default Avatars
 
