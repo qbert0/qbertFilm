@@ -1,13 +1,33 @@
-import { getFavorite } from "@/api/action/current"
-import { IMAGE } from "@/api/axios"
+'use client'
+import instance, { FAVORITE, IMAGE, TOKEN } from "@/api/axios"
 import AddListwatch from "../_component/AddListwatch"
 import TrashIcon from "../_component/Trash"
+import { useEffect, useState } from "react"
 
 
-const FavoritePage = async () => {
-    const data : any = await getFavorite()
+const FavoritePage =  () => {
+    const [data, setData] = useState<ListwatchData[]>([])
+    const [load, setLoad] = useState(false)
+    const loadload = () => {
+        setLoad(!load)
+    }
+    const fetch = async () => {
+        const data : any = await instance.get(`${FAVORITE}`, {
+            headers : {
+                Authorization : `Bearer ${TOKEN}` ,
+                Accept: 'application/json'
+            }
+        })
+        const newdata = convert(data.results)
+        setData(newdata)
+    }
 
-    const newdata = convert(data.results)
+    useEffect (() => {
+        fetch()
+    }, [])
+    useEffect (() => {
+        fetch()
+    }, [load])
     return (
         <div className=" bg-[#F5F5F5] py-2">
 
@@ -16,8 +36,8 @@ const FavoritePage = async () => {
             </div>
             <div className="flex flex-col gap-2 px-32 ">
                 {
-                    newdata.map((item, index) => (
-                        <WatchListItem key={index} movie={item}/>
+                    data.map((item, index) => (
+                        <WatchListItem key={index} movie={item} setLoad={loadload}/>
                     ))
                 }
             </div>
@@ -37,7 +57,7 @@ interface ListwatchData {
     vote : number,
 }
 
-const WatchListItem = ({movie} : {movie : ListwatchData}) => {
+const WatchListItem = ({movie, setLoad} : {movie : ListwatchData, setLoad : () => void}) => {
     return (
         <div className=" flex gap-4 h-48 w-full bg-white  rounded-xl shadow-sm border border-gray-400/40">
             <img src={`${IMAGE}${movie && movie.path}`} alt={movie.path} className=" object-cover h-full rounded-l-xl"/>
@@ -55,7 +75,7 @@ const WatchListItem = ({movie} : {movie : ListwatchData}) => {
                 </div>
                 <div className=" flex gap-2 items-center my-2">
                     <AddListwatch id={movie.id} />
-                    <TrashIcon id={movie.id} type="f" />
+                    <TrashIcon id={movie.id} type="f" setLoad={setLoad}/>
                 </div>
             </div>
         </div>

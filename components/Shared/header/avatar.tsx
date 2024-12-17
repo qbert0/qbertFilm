@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuLabel,
+    DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
   
@@ -29,8 +29,11 @@ const Avatars = () => {
         router.push('/login')
     }
 
-    const refest = () => {
-        router.refresh()
+    const refestw = () => {
+        router.push('/watchlist')
+    }
+    const refestf = () => {
+        router.push('/favorite')
     }
     
     if (token === null || name === null) {
@@ -47,11 +50,11 @@ const Avatars = () => {
                 <Avatar {...stringAvatar(name)} />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="border border-gray-300 bg-white p-0 rounded-xl overflow-hidden">
-                <DropdownMenuLabel className='w-full flex  cursor-pointer line-clamp-1 border-b border-gray-400/20' >{name}</DropdownMenuLabel>
-                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer'> <Link href={'/watchlist'} className='w-full' onClick={refest}>watchlist</Link></DropdownMenuLabel>
-                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer'> <Link href={'/favorite'} className='w-full' onClick={refest}>favorite</Link></DropdownMenuLabel>
-                <DropdownMenuLabel className='hover:bg-gray-100 w-full cursor-pointer border-t border-gray-400/20' onClick={logout}>Logout</DropdownMenuLabel>
-        </DropdownMenuContent>
+                <DropdownMenuItem className='w-full flex  cursor-pointer line-clamp-1 border-b border-gray-400/20' >{name}</DropdownMenuItem>
+                <DropdownMenuItem className='hover:bg-gray-100 w-full cursor-pointer'  onClick={refestw}>watchlist</DropdownMenuItem>
+                <DropdownMenuItem className='hover:bg-gray-100 w-full cursor-pointer'  onClick={refestf}>favorite</DropdownMenuItem>
+                <DropdownMenuItem className='hover:bg-gray-100 w-full cursor-pointer border-t border-gray-400/20' onClick={logout}>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
         </DropdownMenu>
     )
 }
