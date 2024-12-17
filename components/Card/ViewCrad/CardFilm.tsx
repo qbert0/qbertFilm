@@ -17,7 +17,7 @@ const CardFilm = ({move} : Props) => {
                 move.poster ? 
                 <img src={`${IMAGE}${move && move.poster}`} alt={move.poster} className=" object-cover h-full"/>
                 :
-                <Skeleton variant="rectangular"  width="100%" height='100%' className=" object-cover h-full bg-slate-600" />
+                <Skeleton variant="rectangular"  width="100%" height='100%' className=" object-cover h-full bg-slate-400" />
             }
             <div className="transition-opacity  w-full h-full  duration-200 opacity-0 hover:opacity-100 absolute bottom-0">
                 <div className=" absolute bottom-2 mx-4">
