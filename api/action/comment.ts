@@ -22,7 +22,6 @@ export const getComment = async (id : string) => {
         const comment = await instance.get(`${COMMENT_SERVICE}${GET}/${id}`)
         return comment
     } catch (error) {
-        console.log(error)
-        return error
+        return 'error'
     }
 }

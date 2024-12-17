@@ -27,7 +27,7 @@ const ListCast = async ({movieId} : Props) => {
                         )
                     })
                 }
-                <CastItem more={true} cast={listCast[0]} />
+                {/* <CastItem more={true} cast={listCast[0]} /> */}
             </div>
             <ScrollBar orientation="horizontal" />
         </ScrollArea>

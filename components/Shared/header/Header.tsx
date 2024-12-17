@@ -1,9 +1,10 @@
-'use client'
+'use server'
 import Link from "next/link"
 import { headerLink } from "./HeaderContain"
 import Image from "next/image"
 import logo from "@/public/image/logo.png"
 import Avatars from "./avatar"
+import SearchMovie from "./Search/SearchMovie"
 
 
 const Header =() => {
@@ -26,7 +27,11 @@ const Header =() => {
                     })
                 }
             </div>
-            <Avatars />
+            <div className="flex flex-1 justify-end gap-4">
+                <SearchMovie />
+                <Avatars />   
+            </div>
+            
         </div>
     )
 }

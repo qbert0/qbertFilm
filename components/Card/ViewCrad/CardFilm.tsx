@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { CardData } from "./cardData";
+import { IMAGE } from "@/api/axios";
+import { Skeleton } from "@mui/material";
 
 interface Props {
     move : CardData
@@ -11,7 +13,12 @@ const CardFilm = ({move} : Props) => {
     return (
         <div className=" relative  rounded-xl overflow-hidden border border-slate-50 border-opacity-20 hover:scale-110 hover:z-10 duration-200">
             <Link href={`/movie/${move.id}`}>
-            <img src={`https://image.tmdb.org/t/p/original${move && move.poster}`} alt={move.poster} className=" object-cover w-full"/>
+            {
+                move.poster ? 
+                <img src={`${IMAGE}${move && move.poster}`} alt={move.poster} className=" object-cover h-full"/>
+                :
+                <Skeleton variant="rectangular"  width="100%" height='100%' className=" object-cover h-full bg-slate-600" />
+            }
             <div className="transition-opacity  w-full h-full  duration-200 opacity-0 hover:opacity-100 absolute bottom-0">
                 <div className=" absolute bottom-2 mx-4">
                     <div className="text-white font-bold text-2xl mb-10">

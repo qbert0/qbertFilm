@@ -11,7 +11,7 @@ const Home = async () => {
   const newdata = convertEmbla(data.results)
   const listTren = convertTrending(listdata.results)
   return (
-    <div className="w-full">
+    <div className="w-full bg-black">
       <div className="w-full bg-blue-400 p-0">
         <Embla Embla={newdata}/>
       </div>
@@ -20,7 +20,7 @@ const Home = async () => {
           OLD LIST
       </div>
       <div className="w-full px-48 my-4">
-        <GridCardFilm type="train"/>
+        <GridCardFilm type="train" path="a"/>
       </div>
 
 

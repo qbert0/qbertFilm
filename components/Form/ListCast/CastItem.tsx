@@ -1,6 +1,7 @@
 import { IMAGE } from "@/api/axios";
 import { Cast } from "./CastData";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 interface Props {
     cast : Cast
@@ -11,7 +12,7 @@ const CastItem = ({cast, more} : Props) => {
     if (!cast.profile_path) return
     if (!more) { 
     return (
-        <div className=" border border-gray-400 rounded-xl overflow-hidden w-32 shadow-lg ">
+        <Link href={`/people/${cast.id}`} className=" border border-gray-400 rounded-xl overflow-hidden w-36 shadow-lg bg-white">
             <div className=" overflow-hidden">
                 <img src={`${IMAGE}${cast && cast.profile_path}`} alt={cast.profile_path} className=" object-cover h-full" />
             </div>
@@ -23,7 +24,7 @@ const CastItem = ({cast, more} : Props) => {
                     {cast.character}
                 </div>
             </div>
-        </div>
+        </Link>
     )}
     else {
         return (

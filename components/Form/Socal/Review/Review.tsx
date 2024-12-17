@@ -10,7 +10,6 @@ interface Props {
     movieId : string
 }
 
-
 const Review = async ({movieId} : Props) => {
     const data : any = await instance.get(`/movie/${movieId}/reviews${API_KEY}`)
     const listReview = convertReview(data.results)
