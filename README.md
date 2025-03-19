@@ -21,3 +21,6 @@ Hệ thống được dựa trên kiến trúc Microservice.
 `docker-compose up`
 
 Sau khi pull và khởi động các container của từng service thành công, truy cập: [http://localhost:3000/](http://localhost:3000/)
+
+## Review
+Xem sản phẩm được deploy tại:  [http://localhost:3000/](https://qbert-film.vercel.app/)
